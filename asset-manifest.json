@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/soccerstat/static/css/main.9c048bf1.css",
-    "main.js": "/soccerstat/static/js/main.1745a0fe.js",
-    "static/js/787.2438d0b6.chunk.js": "/soccerstat/static/js/787.2438d0b6.chunk.js",
-    "static/media/logoball.svg": "/soccerstat/static/media/logoball.0e6ab40f3fafc885c00863a9ae8947d5.svg",
-    "index.html": "/soccerstat/index.html",
-    "main.9c048bf1.css.map": "/soccerstat/static/css/main.9c048bf1.css.map",
-    "main.1745a0fe.js.map": "/soccerstat/static/js/main.1745a0fe.js.map",
-    "787.2438d0b6.chunk.js.map": "/soccerstat/static/js/787.2438d0b6.chunk.js.map"
+    "main.css": "/soccerstat/Legaue/static/css/main.9c048bf1.css",
+    "main.js": "/soccerstat/Legaue/static/js/main.f23be4f7.js",
+    "static/js/787.2438d0b6.chunk.js": "/soccerstat/Legaue/static/js/787.2438d0b6.chunk.js",
+    "static/media/logoball.svg": "/soccerstat/Legaue/static/media/logoball.0e6ab40f3fafc885c00863a9ae8947d5.svg",
+    "index.html": "/soccerstat/Legaue/index.html",
+    "main.9c048bf1.css.map": "/soccerstat/Legaue/static/css/main.9c048bf1.css.map",
+    "main.f23be4f7.js.map": "/soccerstat/Legaue/static/js/main.f23be4f7.js.map",
+    "787.2438d0b6.chunk.js.map": "/soccerstat/Legaue/static/js/787.2438d0b6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9c048bf1.css",
-    "static/js/main.1745a0fe.js"
+    "static/js/main.f23be4f7.js"
   ]
 }
