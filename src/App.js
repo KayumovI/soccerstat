@@ -15,9 +15,9 @@ const App = () => {
       </header>
       <div>
         <Routes>
-          <Route path="/League" element={<League/>} />
-          <Route path="/Team" element={<Team/>} />
-          <Route path="*" element={<Notfoundpage/>} />
+          <Route path="/soccerstat/League" element={<League/>} />
+          <Route path="/soccerstat/Team" element={<Team/>} />
+          <Route path="/soccerstat/*" element={<Notfoundpage/>} />
         </Routes>
         
       </div>
