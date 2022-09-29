@@ -2,6 +2,7 @@ import { AppBar, Toolbar, Container, Typography, Tab, Tabs, Box } from '@mui/mat
 import logo from '../../assets/img/logoball.svg'
 import "./Header.css"
 import { useState } from "react"
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -23,11 +24,11 @@ const Header = () => {
                             textColor="inherit"
                             TabIndicatorProps={{ sx: { bgcolor: "white"} }}
                         >
-                            <Tab value="one" label="Лиги"/>
-                            <Tab value="two" label="Команды"/>
+                            <Tab value="one" label="Лиги" to="/League" component={Link} />
+                            <Tab value="two" label="Команды" to="/Team" component={Link} />
                         </Tabs>
                     </Box>
-                </Toolbar>
+                </Toolbar> 
             </Container>
       </AppBar>
   )
