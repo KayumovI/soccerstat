@@ -15,7 +15,7 @@ const App = () => {
       </header>
       <div>
         <Routes>
-          <Route path="/soccerstat/League" element={<League/>} />
+          <Route path="/soccerstat/" element={<League/>} />
           <Route path="/soccerstat/Team" element={<Team/>} />
           <Route path="/soccerstat/*" element={<Notfoundpage/>} />
         </Routes>
