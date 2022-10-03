@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Team = () => {
+function Team() {
   return (
     <div>
-        <h1 align = "center">Team</h1>
-    </div>  
+      <h1 align="center">Team</h1>
+    </div>
   )
 }
 

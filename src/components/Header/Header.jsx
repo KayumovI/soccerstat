@@ -24,7 +24,7 @@ const Header = () => {
                             textColor="inherit"
                             TabIndicatorProps={{ sx: { bgcolor: "white"} }}
                         >
-                            <Tab value="one" label="Лиги" to="/" component={Link} />
+                            <Tab value="one" label="Лиги" to="/soccerstat" component={Link} />
                             <Tab value="two" label="Команды" to="/Team" component={Link} />
                         </Tabs>
                     </Box>

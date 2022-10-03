@@ -1,6 +1,7 @@
 const UrlCompetitions = "https://api.football-data.org/v2/competitions/"
 const UrlTeam = "https://api.football-data.org/v2/teams/"
-export async function getLeagueData() {
+
+export async function getLeaguesData() {
   const api = await fetch(UrlCompetitions, {
     headers: {
       "x-auth-token": process.env.REACT_APP_API_KEY
@@ -15,7 +16,7 @@ export async function getLeagueData() {
     return null
   }
 }
-export async function getTeamData() {
+export async function getTeamsData() {
   const api = await fetch(UrlTeam, {
     headers: {
       "x-auth-token": process.env.REACT_APP_API_KEY

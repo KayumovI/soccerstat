@@ -3,30 +3,38 @@ import Header from './components/Header/Header.jsx'
 import League from './components/League/League.jsx'
 import Notfoundpage from './components/Notfoundpage/Notfoundpage.jsx'
 import Team from './components/Team/Team.jsx'
-import {getTeamData, getLeagueData }from './components/Fetch/Fetch.jsx'
+import {getTeamsData, getLeaguesData }from './components/Fetch/Fetch.jsx'
 import { useState , useEffect, React} from 'react'
+import TeamsList from './components/TeamsList/TeamsList.jsx'
 
 const App = () => {
   
-  const [league, setleague] = useState([])
-  const [team, setteam] = useState([])
+  const [leaguesList, setLeaguesList] = useState([])
+  const [teamsList, setTeamsList] = useState([])
+
+  //получаем элементы
   useEffect(() =>{
-    const dataLeague = async () =>{
-    const apiLeague = await getLeagueData();
-    if (!apiLeague) return 
-        console.log("Данные о лигах", apiLeague);
-        setleague(apiLeague.competitions)
+    /*Асинхронный(одновременный) запрос на получение данных*/
+    const dataLeagues = async () =>{
+    /*fetch - метод, позволяющий полностью прочитать url адрес и получить данные*/
+    const apiLeagues = await getLeaguesData();
+
+    if (!apiLeagues) return 
+        console.log("Данные о лигах в формате json", apiLeagues);
+        setLeaguesList(apiLeagues.competitions)
+
     }
-    dataLeague()
+    dataLeagues()
   }, [])
   useEffect(() =>{
-    const dataTeam = async () =>{
-    const apiTeam = await getTeamData();
-    if (!apiTeam) return
-        console.log("Данные о командах", apiTeam);
-        setteam(apiTeam.team)
+    const dataTeams = async () =>{
+    const apiTeams = await getTeamsData();
+
+    if (!apiTeams) return
+        console.log("Данные о командах в формате json", apiTeams);
+        setTeamsList(apiTeams.teams)
     }
-    dataTeam()
+    dataTeams()
   }, [])
 
   return (
@@ -36,10 +44,11 @@ const App = () => {
       </header>
       <div>
         <Routes>
-          <Route path="/" element={<League/>} />
+          <Route path="/soccerstat" element={<League/>} />
           <Route path="/Team" element={<Team/>} />
-          <Route path="*" element={<Notfoundpage/>} />
+          <Route path="/*" element={<Notfoundpage/>} />
         </Routes>
+        <TeamsList teamsList = {teamsList} />
       </div>
     </>
   ) 
