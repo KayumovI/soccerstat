@@ -1,7 +1,7 @@
 import { Card, CardActionArea, CardContent, Grid, Typography} from "@mui/material"
 import { Container } from "@mui/system"
 import { Link } from "react-router-dom"
-import noimg from '../../assets/img/noimg.svg'
+import noimg from '../../assets/img/noimg.jpg'
 
 function TeamItem({idTeam, nameTeam, flagTeam}){
 
@@ -12,8 +12,8 @@ function TeamItem({idTeam, nameTeam, flagTeam}){
     }
 
     return(
-        <Grid item xs={2} margin={4} my={6}> {/*сетка макетов item - дочерний элемент grid в teamsList | xs-ширина одного эл-та | my - отступ сверху */}
-            <Card> {/*карточки объектов с содержимым*/}
+        <Grid item xs={2} margin={4} my={6}> 
+            <Card> 
                 <CardActionArea component={Link} to={teamLink}>
                     <CardContent>
 
@@ -25,7 +25,7 @@ function TeamItem({idTeam, nameTeam, flagTeam}){
                         <Container
                             component="img"
                             src={flagTeam}
-                            sx={{ height: 200, width: 230, pb: "20px" }}
+                            sx={{ height: 220, width: 250, pb: "20px" }}
                         /> 
                 </CardActionArea>
             </Card>

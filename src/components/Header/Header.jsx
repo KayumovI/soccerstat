@@ -25,7 +25,7 @@ const Header = () => {
                             TabIndicatorProps={{ sx: { bgcolor: "white"} }}
                         >
                             <Tab value="one" label="Лиги" to="/soccerstat" component={Link} />
-                            <Tab value="two" label="Команды" to="/Team" component={Link} />
+                            <Tab value="two" label="Команды" to="/teams" component={Link} />
                         </Tabs>
                     </Box>
                 </Toolbar> 

@@ -6,49 +6,23 @@ import Team from './components/Team/Team.jsx'
 import {getTeamsData, getLeaguesData }from './components/Fetch/Fetch.jsx'
 import { useState , useEffect, React} from 'react'
 import TeamsList from './components/TeamsList/TeamsList.jsx'
+import SearchLine from './components/Search/Search.jsx'
+import PaginationLeagues from './components/PaginationLeagues/PaginationLeagues.jsx'
+import Routing from './components/Routing/Routing.jsx'
+import { Box } from '@mui/material'
+
 
 const App = () => {
   
-  const [leaguesList, setLeaguesList] = useState([])
-  const [teamsList, setTeamsList] = useState([])
-
-  //получаем элементы
-  useEffect(() =>{
-    /*Асинхронный(одновременный) запрос на получение данных*/
-    const dataLeagues = async () =>{
-    /*fetch - метод, позволяющий полностью прочитать url адрес и получить данные*/
-    const apiLeagues = await getLeaguesData();
-
-    if (!apiLeagues) return 
-        console.log("Данные о лигах в формате json", apiLeagues);
-        setLeaguesList(apiLeagues.competitions)
-
-    }
-    dataLeagues()
-  }, [])
-  useEffect(() =>{
-    const dataTeams = async () =>{
-    const apiTeams = await getTeamsData();
-
-    if (!apiTeams) return
-        console.log("Данные о командах в формате json", apiTeams);
-        setTeamsList(apiTeams.teams)
-    }
-    dataTeams()
-  }, [])
-
   return (
     <> 
       <header>
           <Header />
       </header>
       <div>
-        <Routes>
-          <Route path="/soccerstat" element={<League/>} />
-          <Route path="/Team" element={<Team/>} />
-          <Route path="/*" element={<Notfoundpage/>} />
-        </Routes>
-        <TeamsList teamsList = {teamsList} />
+      <Box>
+        <Routing />
+      </Box>
       </div>
     </>
   ) 
