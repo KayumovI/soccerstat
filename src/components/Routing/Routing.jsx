@@ -1,8 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 
-import Leagues from '../League/League.jsx'
-import Teams from '../Team/Team.jsx'
-
+import LeaguesMatches from '../LeaguesMatches/LeaguesMatches.jsx'
+import TeamsMatches from '../TeamMatches/TeamMatches.jsx'
 import PaginationLeagues from '../PaginationLeagues/PaginationLeagues.jsx'
 import PaginationTeams from '../PaginationTeams/PaginationTeams.jsx'
 import Notfoundpage from '../Notfoundpage/Notfoundpage.jsx'
@@ -20,7 +19,7 @@ function Routing() {
     const apiLeagues = await getLeaguesData();
 
     if (!apiLeagues) return 
-        console.log("Данные о лигах в формате json", apiLeagues);
+        console.log("Данные о лигах", apiLeagues);
         setLeaguesList(apiLeagues.competitions)
 
     }
@@ -32,25 +31,34 @@ function Routing() {
     const apiTeams = await getTeamsData();
 
     if (!apiTeams) return
-        console.log("Данные о командах в формате json", apiTeams);
+        console.log("Данные о командах", apiTeams);
         setTeamsList(apiTeams.teams)
     }
     dataTeams()
   }, [])
 
+  const leaguesMatches = leaguesList.map((league) => (
+    <Route
+      path={`/leagues/${league.id}/matches`}
+      element={<LeaguesMatches league={league} />}
+      key={league.id}
+    />
+  ))
+  const teamsMatches = teamsList.map((team) => (
+    <Route
+      path={`/teams/${team.id}/matches`}
+      element={<TeamsMatches team={team} />}
+      key={team.id}
+    />
+  ))
+
     return (
       <Routes>
         <Route path="/soccerstat" element={<PaginationLeagues leaguesList={leaguesList}/>} /> 
         <Route path="/teams" element={<PaginationTeams teamsList={teamsList}/>} />
-        {/*  
-        
-
-
+        {leaguesMatches}
+        {teamsMatches}
         <Route path="*" element={<Notfoundpage />} /> 
-        
-        
-        */}
-        
       </Routes>
        )
       }

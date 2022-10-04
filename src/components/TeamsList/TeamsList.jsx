@@ -4,6 +4,7 @@ import TeamsItem from '../TeamsItem/TeamsItem.jsx'
 function TeamsList({paginatedTeamsList}){
 
 
+
     return(
         <Grid container spacing={3} justifyContent="center">
           {paginatedTeamsList.map((team) => (
@@ -19,4 +20,4 @@ function TeamsList({paginatedTeamsList}){
 
 }
 
-export default TeamsList;
+export default TeamsList

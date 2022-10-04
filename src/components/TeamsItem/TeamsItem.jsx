@@ -25,7 +25,7 @@ function TeamItem({idTeam, nameTeam, flagTeam}){
                         <Container
                             component="img"
                             src={flagTeam}
-                            sx={{ height: 220, width: 250, pb: "20px" }}
+                            sx={{ height: 200, width: 230, pb: "20px" }}
                         /> 
                 </CardActionArea>
             </Card>

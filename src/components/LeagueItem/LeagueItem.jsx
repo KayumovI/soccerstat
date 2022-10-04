@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 function LeagueItem({idLeague, nameLeague, name, flagLeague}){
 
-    const leagueLink = `/league/${idLeague}/matches`
+    const leagueLink = `/leagues/${idLeague}/matches` 
 
     if(!flagLeague){
         flagLeague=noimg
@@ -19,7 +19,7 @@ function LeagueItem({idLeague, nameLeague, name, flagLeague}){
                         component="img"
                         alt="Картинка лиги"
                         src={flagLeague}
-                        sx={{ height: 240, pb: "15px" }}
+                        sx={{ height: 200, pb: "10px" }}
                     />
 
 <                   Typography sx={{ fontWeight: "bold" }} variant="h6">
